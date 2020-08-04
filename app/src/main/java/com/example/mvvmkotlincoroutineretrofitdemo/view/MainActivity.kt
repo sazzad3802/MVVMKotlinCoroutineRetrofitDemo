@@ -41,7 +41,9 @@ class MainActivity : AppCompatActivity() {
 
             //if it is not null then we will display all users
             userList?.let {
+                progressBar.visibility = View.GONE
                 userAdapter.setUsers(it)
+                recyclerView.visibility = View.VISIBLE
             }
         })
 
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
             //if it is not null then we will display all users
             isFailed?.let {
+                progressBar.visibility = View.GONE
                 Toast.makeText(this, "Oops! something went wrong", Toast.LENGTH_SHORT).show()
             }
         })
